@@ -28,13 +28,13 @@ namespace csub
             //Rectangle seaRectangle = new Rectangle();
             //LinearGradientBrush seaBrush = new LinearGradientBrush(seaRectangle, System.Drawing.Color.Aquamarine, Color.DarkBlue, 45, false);
                 
-       
+        
       
 
   
 
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
-            e.Graphics.DrawImage(periskop, 0, 0 ,800, 800);
+            e.Graphics.DrawImage(periskop, 0, 0 ,(this.Width-15), this.Height-50);
 
         }
     }
