@@ -18,8 +18,6 @@ namespace csub
         private Rectangle skyRectangle = new Rectangle(0, 0, 1000, 400);
         private Rectangle seaRectangle = new Rectangle(0, 400, 1000, 600);
 
-        
-
         public Form1()
         {
             InitializeComponent();
@@ -41,8 +39,10 @@ namespace csub
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
-            e.Graphics.DrawImage(periskop, 0, 0 ,(this.Width-15), this.Height-45);
+            e.Graphics.DrawImage(periskop, 0, 0, (this.Width-15), this.Height-45);
 
         }
+
+        
     }
 }
