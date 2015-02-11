@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,12 @@ namespace csub
 {
     public partial class Form1 : Form
     {
+
+        private Rectangle skyRectangle = new Rectangle(0, 0, 1000, 400);
+        private Rectangle seaRectangle = new Rectangle(0, 400, 1000, 600);
+
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -24,17 +31,17 @@ namespace csub
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            //Rectangle seaRectangle = new Rectangle();
-            //LinearGradientBrush seaBrush = new LinearGradientBrush(seaRectangle, System.Drawing.Color.Aquamarine, Color.DarkBlue, 45, false);
-                
-        
-      
-
-  
+        {         
+            Graphics g;
+            g = e.Graphics;
+            LinearGradientBrush skyBrush = new LinearGradientBrush(skyRectangle, Color.DodgerBlue, Color.LightSkyBlue, 90);
+            LinearGradientBrush seaBrush = new LinearGradientBrush(seaRectangle, Color.CornflowerBlue, Color.DarkBlue, 90);
+                         
+            g.FillRectangle(skyBrush, 0, 0, 1000, 400);
+            g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
-            e.Graphics.DrawImage(periskop, 0, 0 ,(this.Width-15), this.Height-50);
+            e.Graphics.DrawImage(periskop, 0, 0 ,(this.Width-15), this.Height-45);
 
         }
     }
