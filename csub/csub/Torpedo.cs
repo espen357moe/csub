@@ -8,5 +8,9 @@ namespace csub
 {
     class Torpedo
     {
+        public Torpedo()
+        {
+            float speed;
+        }
     }
 }
