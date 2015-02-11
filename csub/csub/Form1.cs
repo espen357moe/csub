@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;  
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,12 +25,13 @@ namespace csub
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        { 
 
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
-        {         
+        {     
+    
             Graphics g;
             g = e.Graphics;
             LinearGradientBrush skyBrush = new LinearGradientBrush(skyRectangle, Color.DodgerBlue, Color.LightSkyBlue, 90);
@@ -40,6 +42,8 @@ namespace csub
 
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
             e.Graphics.DrawImage(periskop, 0, 0, (this.Width-15), this.Height-45);
+
+
 
         }
 
