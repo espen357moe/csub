@@ -14,12 +14,10 @@ namespace csub
             float speed;
         }
 
-        public void drawTorpedo()
+        public void drawTorpedo(Graphics g, Size clientSize)
         {
-            Graphics g = new Graphics();
             SolidBrush torpedoBrush = new SolidBrush(Color.Red);
-
-            g.DrawEllipse(torpedoBrush, 200, 200, 50, 50);
+            g.FillEllipse(torpedoBrush, ((clientSize.Width-43)/2), (clientSize.Height-20), 50, 50);
         }
 
     }

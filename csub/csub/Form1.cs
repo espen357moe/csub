@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace csub
 {
     public partial class Form1 : Form
@@ -39,6 +40,9 @@ namespace csub
                          
             g.FillRectangle(skyBrush, 0, 0, 1000, 400);
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
+            
+            Torpedo t = new Torpedo();
+            t.drawTorpedo(g, this.ClientSize);
 
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
             e.Graphics.DrawImage(periskop, 0, 0, (this.Width-15), this.Height-45);
