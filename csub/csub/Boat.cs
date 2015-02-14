@@ -13,6 +13,7 @@ namespace csub
         {
             float speed;
             float distance;
+            Boolean direction;
             Image boatImage;
         }
     }
