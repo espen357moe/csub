@@ -8,20 +8,21 @@ using System.Threading.Tasks;
 
 namespace csub
 {
-    class Torpedo
+    public class Torpedo
     {
-        public Torpedo()
+        //lager skrivbar og lesbar variabel for torpedoens posisjon
+        public PointF Position { get; set; }
+
+        //metode for å tegne selve torpedoen
+        public void Render(Graphics g)
         {
-            float speed;
+            g.FillEllipse(Brushes.Red, new RectangleF(-16, -16, 32, 32));
         }
 
-        public void drawTorpedo(Graphics g, Size clientSize)
+        //metode for å flytte torpedoen ved bilderuteoppdatering
+        public void FrameTick(double dt)
         {
-            var xPosition = clientSize.Width;
-            var yPosition = clientSize.Height;
-            SolidBrush torpedoBrush = new SolidBrush(Color.Red);
-            g.FillEllipse(torpedoBrush, ((xPosition/2)), (yPosition), 100, 100);
+            Position = new PointF(Position.X, (float)(Position.Y - dt*50));
         }
-
     }
 }
