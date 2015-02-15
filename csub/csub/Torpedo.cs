@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,10 @@ namespace csub
 
         public void drawTorpedo(Graphics g, Size clientSize)
         {
+            var xPosition = clientSize.Width;
+            var yPosition = clientSize.Height;
             SolidBrush torpedoBrush = new SolidBrush(Color.Red);
-            g.FillEllipse(torpedoBrush, ((clientSize.Width-43)/2), (clientSize.Height-20), 50, 50);
+            g.FillEllipse(torpedoBrush, ((xPosition/2)), (yPosition), 100, 100);
         }
 
     }
