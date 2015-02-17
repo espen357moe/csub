@@ -52,10 +52,17 @@ namespace csub
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
             Torpedo t = new Torpedo();
+            
             t.Render(g);
-
+            t.FrameTick(100);
+            
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
             g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }            
 }

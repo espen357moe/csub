@@ -20,9 +20,9 @@ namespace csub
         }
 
         //metode for å flytte torpedoen ved bilderuteoppdatering
-        public void FrameTick(double dt)
+        public void FrameTick(float dt)
         {
-            Position = new PointF(Position.X, (float)(Position.Y - dt*50));
+            Position = new PointF(Position.X, (Position.Y - 50 * dt));
         }
     }
 }
