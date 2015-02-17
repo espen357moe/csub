@@ -17,7 +17,6 @@ namespace csub
 {
     public partial class Form1 : Form
     {
-
         private bool running;
         private readonly Form display;
         public bool IsRunning { get { return running; } }
@@ -37,11 +36,8 @@ namespace csub
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {     
-    
-           Graphics g;
-            g = e.Graphics;
-            Render(g);
-            
+            Graphics g = e.Graphics;;          
+            Render(g);           
         }
 
         //metode for å tegne selve skjermbildet
