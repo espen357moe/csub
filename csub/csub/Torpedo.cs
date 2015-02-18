@@ -13,7 +13,7 @@ namespace csub
         //metode for å tegne selve torpedoen
         public override void Render(Graphics g)
         {
-            g.FillEllipse(Brushes.CornflowerBlue, new RectangleF(-16, -16, 32, 64));
+            g.FillEllipse(Brushes.CornflowerBlue, new RectangleF(-15, -16, 32, 64));
             g.FillRectangle(Brushes.CornflowerBlue, new RectangleF(-22, 24, 48, 48));
         }
 
