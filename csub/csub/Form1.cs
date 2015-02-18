@@ -36,7 +36,7 @@ namespace csub
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {     
-            Graphics g = e.Graphics;;          
+            Graphics g = e.Graphics;          
             Render(g);           
         }
 
@@ -51,17 +51,14 @@ namespace csub
             g.FillRectangle(skyBrush, 0, 0, 1000, 400);
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
-            
 
-
+            if (t != null) { t.Render(g);}
             
-            t.Render(g);
-            t.FrameTick((float)0.1);
-            
-            Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
+            Image periskop = Image.FromFile("../../images/periskop.png");
             g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                            
         }
 
+        
         
         
 
