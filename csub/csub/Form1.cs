@@ -53,25 +53,10 @@ namespace csub
 
             Torpedo t = new Torpedo();
 
-            var transform = g.Transform;
-            var mat = new Matrix(1, 0, 0, 1, 0, 0); // Identitetsmatrise
 
-            int h2 = display.ClientSize.Height / 2;
-            var scale = t.Position.Y / h2;
-
-            // Vi flytter koordinatsystemet til midten av skjermen istedet for øverst i høyre hjørne.
-            mat.Translate((float)display.ClientSize.Width / 2, (float)display.ClientSize.Height / 2);
-            // Vi skalerer etter avstand fra horisonten
-            mat.Scale(scale, scale);
-            // Vi flytter igjen koordinatsystemet til der torpedoen befinner seg.
-            mat.Translate(t.Position.X, t.Position.Y);
-
-            g.Transform = mat; // Bytt koordinatsystem til det nye vi laget
-            t.Render(g);
-            g.Transform = transform; // Sett koordinatsystemet tilbake.
             
             t.Render(g);
-            t.FrameTick(100);
+            t.FrameTick(10);
             
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
             g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                            
