@@ -60,7 +60,26 @@ namespace csub
             g.FillRectangle(skyBrush, 0, 0, 1000, 400);
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
-            if (torpedo != null) { torpedo.Render(g);}           
+            if (torpedo != null)
+            {
+                
+                var transform = g.Transform;
+                var mat = new Matrix(1, 0, 0, 1, 0, 0); // Identitetsmatrise
+
+                int h2 = display.ClientSize.Height / 2;
+                var scale = torpedo.Position.Y / h2;
+
+                //Vi flytter koordinatsystemet til midten av skjermen istedet for øverst i høyre hjørne.
+                mat.Translate((float)display.ClientSize.Width / 2, (float)display.ClientSize.Height / 2);
+                // Vi skalerer etter avstand fra horisonten
+                mat.Scale(scale, scale);
+                // Vi flytter igjen koordinatsystemet til der torpedoen befinner seg.
+                mat.Translate(torpedo.Position.X, torpedo.Position.Y);
+
+                torpedo.Render(g);
+            }
+
+            
             
             Image periskop = Image.FromFile("../../images/periskop.png");
 
