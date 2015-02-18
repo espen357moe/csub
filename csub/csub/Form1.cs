@@ -18,7 +18,6 @@ namespace csub
     public partial class Form1 : Form
     {
         private bool running;
-        private readonly Form display;
         public bool IsRunning { get { return running; } }
         private Torpedo torpedo;
         private Rectangle skyRectangle = new Rectangle(0, 0, 1000, 400);
@@ -45,7 +44,7 @@ namespace csub
         {
             if (keyPressEventArgs.KeyChar == ' ')
             {
-                torpedo = new Torpedo() { Position = new PointF(0, (float)display.ClientSize.Height / 2) };
+                torpedo = new Torpedo() { Position = new PointF(0, (float)this.ClientSize.Height / 2) };
             }
         }
 
@@ -66,11 +65,11 @@ namespace csub
                 var transform = g.Transform;
                 var mat = new Matrix(1, 0, 0, 1, 0, 0); // Identitetsmatrise
 
-                int h2 = display.ClientSize.Height / 2;
+                int h2 = this.Height / 2;
                 var scale = torpedo.Position.Y / h2;
 
                 //Vi flytter koordinatsystemet til midten av skjermen istedet for øverst i høyre hjørne.
-                mat.Translate((float)display.ClientSize.Width / 2, (float)display.ClientSize.Height / 2);
+                mat.Translate((float) this.ClientSize.Width / 2, (float)this.ClientSize.Height / 2);
                 // Vi skalerer etter avstand fra horisonten
                 mat.Scale(scale, scale);
                 // Vi flytter igjen koordinatsystemet til der torpedoen befinner seg.
