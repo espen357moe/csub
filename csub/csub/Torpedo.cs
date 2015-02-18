@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace csub
 {
-    public class Torpedo
+    public class Torpedo : Renderable
     {
-        //lager skrivbar og lesbar variabel for torpedoens posisjon
-        public PointF Position { get; set; }
-
         //metode for å tegne selve torpedoen
         public void Render(Graphics g)
         {
