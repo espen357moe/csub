@@ -36,7 +36,7 @@ namespace csub
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {     
-            Graphics g = e.Graphics;;          
+            Graphics g = e.Graphics;          
             Render(g);           
         }
 
@@ -51,10 +51,10 @@ namespace csub
             g.FillRectangle(skyBrush, 0, 0, 1000, 400);
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
+
+            if (t != null) { t.Render(g);}
             
 
-
-            
             t.Render(g);
             t.FrameTick(10);
 
@@ -66,13 +66,12 @@ namespace csub
             Image titanic = System.Drawing.Image.FromFile("../../images/titanic.png");
 
             g.DrawImage(titanic, 300, 340);
-
             g.DrawImage(basto, 50, 400);
             g.DrawImage(pirat, 250,460 );
-            g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);
-            
+            g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                 
         }
 
+        
         
         
 
