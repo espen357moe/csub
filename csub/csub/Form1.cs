@@ -77,6 +77,7 @@ namespace csub
                 mat.Translate(torpedo.Position.X, torpedo.Position.Y);
 
                 torpedo.Render(g);
+                g.Transform = transform;
             }
 
             
@@ -88,7 +89,9 @@ namespace csub
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (torpedo != null) torpedo.FrameTick((float)0.1);
             Invalidate();
+
         }
 
     }            
