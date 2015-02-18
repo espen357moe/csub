@@ -40,6 +40,14 @@ namespace csub
             Render(g);           
         }
 
+        private void DisplayOnKeyPress(object sender, KeyPressEventArgs keyPressEventArgs)
+        {
+            if (keyPressEventArgs.KeyChar == ' ')
+            {
+                Torpedo torpedo = new Torpedo();
+            }
+        }
+
         //metode for å tegne selve skjermbildet
         private void Render(Graphics g)
         {
@@ -51,22 +59,14 @@ namespace csub
             g.FillRectangle(skyBrush, 0, 0, 1000, 400);
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
-
             if (torpedo != null) { torpedo.Render(g);}
             
-
-
-           
-            torpedo.FrameTick((float)0.1);
+            
+            
             Image periskop = Image.FromFile("../../images/periskop.png");
 
-
             g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                 
-        }
-
-        
-        
-        
+        }    
 
         private void timer1_Tick(object sender, EventArgs e)
         {
