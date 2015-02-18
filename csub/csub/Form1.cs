@@ -40,15 +40,16 @@ namespace csub
             Render(g);           
         }
 
+        //Instansierer ny torpedo om bruker trykker space
         private void DisplayOnKeyPress(object sender, KeyPressEventArgs keyPressEventArgs)
         {
             if (keyPressEventArgs.KeyChar == ' ')
             {
-                Torpedo torpedo = new Torpedo();
+                torpedo = new Torpedo();
             }
         }
 
-        //metode for å tegne selve skjermbildet
+        //metode for å tegne en bilderute / frame
         private void Render(Graphics g)
         {
             g.SmoothingMode = SmoothingMode.AntiAlias;
