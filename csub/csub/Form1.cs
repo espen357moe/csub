@@ -57,8 +57,8 @@ namespace csub
             LinearGradientBrush skyBrush = new LinearGradientBrush(skyRectangle, Color.DodgerBlue, Color.LightSkyBlue, 90);
             LinearGradientBrush seaBrush = new LinearGradientBrush(seaRectangle, Color.CornflowerBlue, Color.DarkBlue, 90);
 
-            g.FillRectangle(skyBrush, 0, 0, 1000, 400);
-            g.FillRectangle(seaBrush, 0, 400, 1000, 600);
+            g.FillRectangle(skyBrush, 0, 0, ClientSize.Width, ClientSize.Height);
+            g.FillRectangle(seaBrush, 0, 400, ClientSize.Width, (ClientSize.Height /3)*2);
 
             if (torpedo != null)
             {
