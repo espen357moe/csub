@@ -20,7 +20,7 @@ namespace csub
         private bool running;
         private readonly Form display;
         public bool IsRunning { get { return running; } }
-        private readonly List<Torpedo> torpedoes;
+        private Torpedo t;
         private Rectangle skyRectangle = new Rectangle(0, 0, 1000, 400);
         private Rectangle seaRectangle = new Rectangle(0, 400, 1000, 600);
 
@@ -51,16 +51,19 @@ namespace csub
             g.FillRectangle(skyBrush, 0, 0, 1000, 400);
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
-            Torpedo t = new Torpedo();
+            
 
 
             
             t.Render(g);
-            t.FrameTick(10);
+            t.FrameTick((float)0.1);
             
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
             g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                            
         }
+
+        
+        
 
         private void timer1_Tick(object sender, EventArgs e)
         {
