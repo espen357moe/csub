@@ -75,6 +75,7 @@ namespace csub
                 // Vi flytter igjen koordinatsystemet til der torpedoen befinner seg.
                 mat.Translate(torpedo.Position.X, torpedo.Position.Y);
 
+                g.Transform = mat;
                 torpedo.Render(g);
                 g.Transform = transform;
             }
@@ -88,8 +89,14 @@ namespace csub
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (torpedo != null) torpedo.FrameTick((float)0.1);
+            if (torpedo != null)
+            {
+                torpedo.FrameTick((float)0.1);
+                if (torpedo.Position.Y <= 0)
+                    torpedo = null;
+            }
             Invalidate();
+            
 
         }
 
