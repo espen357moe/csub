@@ -45,7 +45,7 @@ namespace csub
         {
             if (keyPressEventArgs.KeyChar == ' ')
             {
-                torpedo = new Torpedo();
+                torpedo = new Torpedo() { Position = new PointF(0, (float)display.ClientSize.Height / 2) };
             }
         }
 
@@ -60,9 +60,7 @@ namespace csub
             g.FillRectangle(skyBrush, 0, 0, 1000, 400);
             g.FillRectangle(seaBrush, 0, 400, 1000, 600);
 
-            if (torpedo != null) { torpedo.Render(g);}
-            
-            
+            if (torpedo != null) { torpedo.Render(g);}           
             
             Image periskop = Image.FromFile("../../images/periskop.png");
 
