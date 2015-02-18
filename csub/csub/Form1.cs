@@ -21,7 +21,10 @@ namespace csub
         private bool running;
         public bool IsRunning { get { return running; } }
         private Torpedo torpedo;
-        
+        private SoundPlayer soundPlayer = new SoundPlayer();
+
+
+
         private Image periskop = Image.FromFile("../../images/periskop.png");
 
         public Form1()
@@ -43,8 +46,10 @@ namespace csub
         //Instansierer ny torpedo om bruker trykker space
         private void DisplayOnKeyPress(object sender, KeyPressEventArgs keyPressEventArgs)
         {
+            SoundPlayer.playExplosionSound();
             if (keyPressEventArgs.KeyChar == ' ')
             {
+                SoundPlayer.playExplosionSound();
                 torpedo = new Torpedo() { Position = new PointF(0, (float)this.ClientSize.Height / 2) };
             }
         }
@@ -68,6 +73,8 @@ namespace csub
 
             if (torpedo != null)
             {
+
+                
                 
                 var transform = g.Transform;
                 var mat = new Matrix(1, 0, 0, 1, 0, 0); // Identitetsmatrise
