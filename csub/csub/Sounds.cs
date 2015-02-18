@@ -10,10 +10,23 @@ namespace csub
     class Sounds
     {
 
-        static void playExplosionSound (){
-            SoundPlayer player = new SoundPlayer("../../sounds/explosion.wav");
+        static void playExplosionSound ()
+        {
+            SoundPlayer explosion = new SoundPlayer("../../sounds/explosion.wav");
+            explosion.Play();
         }
 
+        static void playTorpedoFire()
+        {
+            SoundPlayer fire = new SoundPlayer("Espen skriker!");
+            fire.Play();
+        }
+
+        static void playReloading () 
+        {
+            SoundPlayer reloading = new SoundPlayer("Espen skriker!");
+            reloading.Play();
+        }
 
     }
 }
