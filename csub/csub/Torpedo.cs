@@ -13,8 +13,8 @@ namespace csub
         //metode for å tegne selve torpedoen
         public override void Render(Graphics g)
         {
-            g.FillEllipse(Brushes.CornflowerBlue, new RectangleF(-15, -16, 32, 64));
-            g.FillRectangle(Brushes.CornflowerBlue, new RectangleF(-22, 24, 48, 48));
+            g.FillEllipse(Brushes.RoyalBlue, new RectangleF(-15, -16, 32, 64));
+            g.FillRectangle(Brushes.RoyalBlue, new RectangleF(-22, 24, 48, 48));
         }
 
         //metode for å flytte torpedoen ved bilderuteoppdatering
