@@ -57,14 +57,25 @@ namespace csub
             
             t.Render(g);
             t.FrameTick(10);
-            
+
+
+            Image pirat = System.Drawing.Image.FromFile("../../images/Bot2.png");
+            Image basto = System.Drawing.Image.FromFile("../../images/bast1.png");
             Image periskop = System.Drawing.Image.FromFile("../../images/periskop.png");
-            g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                            
+            Image titanic = System.Drawing.Image.FromFile("../../images/titanic.png");
+
+            g.DrawImage(titanic, 300, 340);
+
+            g.DrawImage(basto, 50, 400);
+            g.DrawImage(pirat, 250,460 );
+            g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             Invalidate();
         }
+
     }            
 }

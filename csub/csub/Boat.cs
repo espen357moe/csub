@@ -16,5 +16,7 @@ namespace csub
             Boolean direction;
             Image boatImage;
         }
+
+        
     }
 }
