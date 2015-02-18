@@ -62,7 +62,7 @@ namespace csub
 
             if (torpedo != null)
             {
-                torpedo.Render(g);
+                
                 var transform = g.Transform;
                 var mat = new Matrix(1, 0, 0, 1, 0, 0); // Identitetsmatrise
 
@@ -75,6 +75,8 @@ namespace csub
                 mat.Scale(scale, scale);
                 // Vi flytter igjen koordinatsystemet til der torpedoen befinner seg.
                 mat.Translate(torpedo.Position.X, torpedo.Position.Y);
+
+                torpedo.Render(g);
             }
 
             
