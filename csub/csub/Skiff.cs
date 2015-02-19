@@ -7,14 +7,22 @@ using System.Threading.Tasks;
 
 namespace csub
 {
-    public abstract class Skiff : Boat
+    //klasse for piratbåt, arver fra de abstrakte klassene Boat og Renderable
+    public class Skiff : Boat
     {
         public override float Speed { get { return 1f; } }     
-        public override bool Direction { get { return Direction.Left; }}
+        public override Form1.Direction Direction { get { return Form1.Direction.Left; }}
         public override float Distance { get { return 200f; } }
        
         private static readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
        
-        public static Image Image { return pirateImage; }
-    }
+        public static Image Image { return pirateImage};
+        
+        public override void Render(Graphics g)
+        {
+            throw new NotImplementedException();
+        }
+   
+        }
 }
+    

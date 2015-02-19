@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace csub
 {
+    //abstrakt superklasse for båter, arver fra klassen Renderable
     public abstract class Boat : Renderable
     {
         public abstract float Speed { get; }
         public abstract Form1.Direction Direction { get; }
-        public abstract float Distance { get; }
-        public abstract Image Image { get; }
-
-        
-        
-    }
+        public abstract float Distance { get; }o45djo
+        public abstract Image Image { get; }                
+    }o45djo
 
 }
