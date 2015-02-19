@@ -14,16 +14,16 @@ namespace csub
         public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; }}
         public override float Distance { get { return 200f; } }
        
-        private static readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
+        private readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
 
-        public override static Image Image
+        public override Image Image
         {
-            return pirateImage ;
+            get { return pirateImage; }
         }
         
         public override void Render(Graphics g)
-        {
-            private Graphics g;
+        {            
+            g.DrawImage(pirateImage);
             throw new NotImplementedException();
         }
    
