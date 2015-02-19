@@ -7,7 +7,7 @@ using System.Media;
 
 namespace csub
 {
-    public class SoundPlayer
+    public class OurSoundPlayer
     {
         public void playExplosionSound()
         {

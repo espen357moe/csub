@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace csub
 {
@@ -18,6 +19,23 @@ namespace csub
         }
 
         private void SplashScreen_Load(object sender, EventArgs e)
+        {
+              
+            SoundPlayer player = new SoundPlayer(@"../../sounds/suspense.mid");  
+            player.Play();  
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

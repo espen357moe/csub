@@ -15,11 +15,15 @@ namespace csub
         public override float Distance { get { return 200f; } }
        
         private static readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
-       
-        public static Image Image { return pirateImage};
+
+        public override static Image Image
+        {
+            return pirateImage ;
+        }
         
         public override void Render(Graphics g)
         {
+            private Graphics g;
             throw new NotImplementedException();
         }
    

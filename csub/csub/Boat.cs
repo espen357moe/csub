@@ -12,8 +12,8 @@ namespace csub
     {
         public abstract float Speed { get; }
         public abstract MainGameForm.Direction Direction { get; }
-        public abstract float Distance { get; }o45djo
+        public abstract float Distance { get; }
         public abstract Image Image { get; }                
-    }o45djo
+    }
 
 }
