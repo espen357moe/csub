@@ -23,7 +23,7 @@ namespace csub
         
         public override void Render(Graphics g)
         {            
-            g.DrawImage(pirateImage);
+            g.DrawImage(pirateImage,100,100);
             throw new NotImplementedException();
         }
    

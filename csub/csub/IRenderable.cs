@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace csub
 {
-    public abstract class Renderable
+    public interface IRenderable
     {
-        public PointF Position { get; set; }
-        public abstract void Render(Graphics g);
+        PointF Position { get; set; }
+        void Render(Graphics g);
     }
 }

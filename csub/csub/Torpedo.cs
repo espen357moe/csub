@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace csub
 {
-    public class Torpedo : Renderable
+    public class Torpedo : IRenderable
     {
         //metode for å tegne selve torpedoen
         public override void Render(Graphics g)
