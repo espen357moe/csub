@@ -11,7 +11,7 @@ namespace csub
     public abstract class Boat : Renderable
     {
         public abstract float Speed { get; }
-        public abstract Form1.Direction Direction { get; }
+        public abstract MainGameForm.Direction Direction { get; }
         public abstract float Distance { get; }o45djo
         public abstract Image Image { get; }                
     }o45djo

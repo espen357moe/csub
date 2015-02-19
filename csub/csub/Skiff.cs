@@ -11,7 +11,7 @@ namespace csub
     public class Skiff : Boat
     {
         public override float Speed { get { return 1f; } }     
-        public override Form1.Direction Direction { get { return Form1.Direction.Left; }}
+        public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; }}
         public override float Distance { get { return 200f; } }
        
         private static readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
