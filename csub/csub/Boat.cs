@@ -13,7 +13,13 @@ namespace csub
         public abstract float Speed { get; }
         public abstract MainGameForm.Direction Direction { get; }
         public abstract float Distance { get; }
-        public abstract Image Image { get; }                
+        public abstract Image Image { get; }
+
+        public PointF Position { get; set; }
+        public void Render(Graphics g)
+        {
+            g.DrawImage(Image, new Point(-Image.Width / 2, -Image.Height));
+        }
     }
 
 }

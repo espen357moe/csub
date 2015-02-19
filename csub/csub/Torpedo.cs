@@ -11,7 +11,13 @@ namespace csub
     public class Torpedo : IRenderable
     {
         //metode for å tegne selve torpedoen
-        public override void Render(Graphics g)
+        public PointF Position
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
+        public void Render(Graphics g)
         {
             g.FillEllipse(Brushes.RoyalBlue, new RectangleF(-15, -16, 32, 64));
             g.FillRectangle(Brushes.RoyalBlue, new RectangleF(-22, 24, 48, 48));

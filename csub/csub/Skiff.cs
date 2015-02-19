@@ -21,7 +21,7 @@ namespace csub
             get { return pirateImage; }
         }
         
-        public override void Render(Graphics g)
+        public void Render(Graphics g)
         {            
             g.DrawImage(pirateImage,100,100);
             throw new NotImplementedException();
