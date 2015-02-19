@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace csub
 {
-    //klasse for piratbåt, arver fra de abstrakte klassene Boat og Renderable
+    //klasse for piratbåt, arver fra den abstrakte klassen Boat og interfacet IRenderable
     public class Skiff : Boat
     {
         public override float Speed { get { return 1f; } }     
@@ -24,7 +24,6 @@ namespace csub
         public void Render(Graphics g)
         {            
             g.DrawImage(pirateImage,100,100);
-            throw new NotImplementedException();
         }
    
         }

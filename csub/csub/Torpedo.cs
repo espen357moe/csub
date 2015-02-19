@@ -10,13 +10,13 @@ namespace csub
 {
     public class Torpedo : IRenderable
     {
-        //metode for å tegne selve torpedoen
+        //metode for å sette og hente torpedoens position
         public PointF Position
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get; set;
         }
 
+        //metode for å tegne selve torpedoen
         public void Render(Graphics g)
         {
             g.FillEllipse(Brushes.RoyalBlue, new RectangleF(-15, -16, 32, 64));
