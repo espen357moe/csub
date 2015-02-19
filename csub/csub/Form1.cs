@@ -22,6 +22,11 @@ namespace csub
         public bool IsRunning { get { return running; } }
         private Torpedo torpedo;
         private SoundPlayer soundPlayer = new SoundPlayer();
+        public enum Direction
+        {
+            Left,
+            Right
+        }
 
 
 

@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace csub
 {
-    class Boat
+    public abstract class Boat : Renderable
     {
-        public Boat()
-        {
-            float speed;
-            float distance;
-            Boolean direction;
-            Image boatImage;
-        }
+        public abstract float Speed { get; }
+        public abstract Form1.Direction Direction { get; }
+        public abstract float Distance { get; }
+        public abstract Image Image { get; }
 
         
+        
     }
+
 }

@@ -55,6 +55,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderable.cs" />
+    <Compile Include="Skiff.cs" />
     <Compile Include="SoundPlayer.cs" />
     <Compile Include="Torpedo.cs" />
     <EmbeddedResource Include="Form1.resx">
