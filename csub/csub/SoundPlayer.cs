@@ -9,7 +9,7 @@ namespace csub
 {
     public class SoundPlayer
     {
-        public static void playExplosionSound()
+        public void playExplosionSound()
         {
             System.Media.SoundPlayer explosion = new System.Media.SoundPlayer("../../sounds/explosion.wav");
             explosion.Play();

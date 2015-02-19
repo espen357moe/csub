@@ -46,10 +46,10 @@ namespace csub
         //Instansierer ny torpedo om bruker trykker space
         private void DisplayOnKeyPress(object sender, KeyPressEventArgs keyPressEventArgs)
         {
-            SoundPlayer.playExplosionSound();
+            
             if (keyPressEventArgs.KeyChar == ' ')
             {
-                SoundPlayer.playExplosionSound();
+                soundPlayer.playExplosionSound();
                 torpedo = new Torpedo() { Position = new PointF(0, (float)this.ClientSize.Height / 2) };
             }
         }
