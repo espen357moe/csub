@@ -114,6 +114,7 @@ namespace csub
                     torpedo = null;
             }
 
+            //vi genererer en tilfeldig båt etter en viss sannsynlighet pr. bilderute
             Random rnd = new Random();       
             int prb = rnd.Next(500);
             if (prb == 1)
