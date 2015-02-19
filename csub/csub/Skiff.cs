@@ -10,9 +10,9 @@ namespace csub
     //klasse for piratbåt, arver fra den abstrakte klassen Boat og interfacet IRenderable
     public class Skiff : Boat
     {
-        public override float Speed { get { return 1f; } }     
+        public override float Speed { get; set; }     
         public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; }}
-        public override float Distance { get { return 200f; } }
+        public override float Distance { get; set; }
        
         private readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
 

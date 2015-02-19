@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +24,7 @@ namespace csub
         private Torpedo torpedo;
         private OurSoundPlayer soundPlayer = new OurSoundPlayer();
         public enum Direction { Left, Right }
+        private List<Boat> boats; 
 
 
 
@@ -31,6 +33,7 @@ namespace csub
         public MainGameForm()
         {
             InitializeComponent();
+            boats = new List<Boat>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -110,8 +113,19 @@ namespace csub
                 if (torpedo.Position.Y <= 0)
                     torpedo = null;
             }
-            Invalidate();
-            
+
+            Random rnd = new Random();       
+            int prb = rnd.Next(500);
+            if (prb == 1)
+            {
+                var theSkiff = new Skiff();
+                theSkiff.Speed = (rnd.Next(1,5));
+                theSkiff.Distance = (rnd.Next(1,10));
+                boats.Add(theSkiff);
+                System.Console.WriteLine("Skiff added " +theSkiff.Speed + "," + theSkiff.Distance);
+            }
+
+            Invalidate();           
 
         }
 

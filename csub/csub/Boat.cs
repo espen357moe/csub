@@ -10,9 +10,9 @@ namespace csub
     //abstrakt superklasse for båter, arver fra klassen Renderable
     public abstract class Boat : IRenderable
     {
-        public abstract float Speed { get; }
+        public abstract float Speed { get; set; }
         public abstract MainGameForm.Direction Direction { get; }
-        public abstract float Distance { get; }
+        public abstract float Distance { get; set; }
         public abstract Image Image { get; }
 
         public PointF Position { get; set; }
