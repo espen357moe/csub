@@ -21,7 +21,7 @@ namespace csub
         private void SplashScreen_Load(object sender, EventArgs e)
         {
               
-            SoundPlayer player = new SoundPlayer(@"../../sounds/suspense.mid");  
+            SoundPlayer player = new SoundPlayer("../../sounds/SOUNDSCRATE-DarkTexture.wav");  
             player.Play();  
         }
 
@@ -34,11 +34,6 @@ namespace csub
         {
             var mainGameForm = new MainGameForm();
             mainGameForm.Show(); 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
