@@ -32,7 +32,13 @@ namespace csub
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var mainGameForm = new MainGameForm();
+            mainGameForm.Show(); 
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
