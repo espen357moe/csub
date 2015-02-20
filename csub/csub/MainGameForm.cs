@@ -53,9 +53,18 @@ namespace csub
             
             if (keyPressEventArgs.KeyChar == ' ')
             {
-                soundPlayer.playTorpedoFire();
-                torpedo = new Torpedo() { Position = new PointF(0, (float)this.ClientSize.Height / 2) };
-            }
+                if (torpedo == null)
+                {
+                    soundPlayer.playTorpedoFire();
+                    torpedo = new Torpedo() { Position = new PointF(0, (float)this.ClientSize.Height / 2) };
+                }
+                else
+                {
+                    soundPlayer.playReloading();
+                }
+ 
+           }
+ 
         }
 
         //metode for å tegne en bilderute / frame
