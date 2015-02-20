@@ -55,7 +55,6 @@ namespace csub
             {
                 soundPlayer.playTorpedoFire();
                 torpedo = new Torpedo() { Position = new PointF(0, (float)this.ClientSize.Height / 2) };
-                soundPlayer.playReloading();
             }
         }
 

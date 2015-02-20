@@ -12,7 +12,7 @@ namespace csub
         public void playExplosionSound()
         {
             System.Media.SoundPlayer explosion = new System.Media.SoundPlayer("../../sounds/explosion.wav");
-            explosion.PlaySync();
+            explosion.Play();
         }
 
         public void playTorpedoFire()
