@@ -128,9 +128,35 @@ namespace csub
                 player.Play(); 
             }
 
-            Invalidate();           
+            Invalidate();
 
+        //    // Skifter text score til string og registrerer treff
+        //    scoreLbl.Text = Convert.ToString(score);
+
+        //    for (int i =0; i < torpedo.Position.X; i++)
+        //    {
+        //        if (torpedo.Position[i].IntersectsWith()) //position av båt mellom parantes 
+        //        {
+        //            score += 10;
+        //        }
+        //   }
+
+        } 
+    
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+        //    //Score
         }
+        ////Restrating av spill + melding om score
+        //public void restart()
+        //{
+        //    timer1.Enabled = false;
+        //    MessageBox.Show("Game over. You got: " +score + "points");
+        //    scoreLbl.Text = "0";
+        //    score = 0;
+
+        //}
 
     }            
 }
