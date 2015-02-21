@@ -29,7 +29,6 @@ namespace csub
         public void FrameTick(float dt)
         {
             Position = new PointF((Position.X - 30 * dt), Position.Y);
-            System.Console.WriteLine(Position);
         }
    
         }
