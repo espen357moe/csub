@@ -8,5 +8,7 @@ namespace csub
 {
     class HighScoreHandler
     {
+        //metode for å lese high score fra XML
+        //metode for å skrive high score til XML
     }
 }
