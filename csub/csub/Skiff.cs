@@ -25,6 +25,12 @@ namespace csub
         {            
             g.DrawImage(pirateImage,100,100);
         }
+
+        public void FrameTick(float dt)
+        {
+            Position = new PointF((Position.X - 30 * dt), Position.Y);
+            System.Console.WriteLine(Position);
+        }
    
         }
 }

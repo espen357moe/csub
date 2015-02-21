@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Boat.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="HighScoreHandler.cs" />
     <Compile Include="MainGameForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace csub
 {
-    //abstrakt superklasse for båter, arver fra klassen Renderable
+    //abstrakt superklasse for båter, implementerer interfacet Renderable
     public abstract class Boat : IRenderable
     {
         public abstract float Speed { get; set; }
