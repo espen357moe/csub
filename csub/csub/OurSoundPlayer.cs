@@ -15,15 +15,15 @@ namespace csub
             explosion.Play();
         }
 
-        static void playTorpedoFire()
+        public void playTorpedoFire()
         {
-            System.Media.SoundPlayer fire = new System.Media.SoundPlayer("Espen skriker!");
+            System.Media.SoundPlayer fire = new System.Media.SoundPlayer("../../sounds/torpedoKort.wav");
             fire.Play();
         }
 
-        static void playReloading() 
+        public void playReloading() 
         {
-            System.Media.SoundPlayer reloading = new System.Media.SoundPlayer("Espen skriker!");
+            System.Media.SoundPlayer reloading = new System.Media.SoundPlayer("../../sounds/reloading.wav");
             reloading.Play();
         }
 
