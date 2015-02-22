@@ -12,7 +12,7 @@ namespace csub
     {
         public override float Speed { get; set; }     
         public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; }}
-        public override float Distance { get; set; }
+        public float Distance { get; set; }
        
         private readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
 
