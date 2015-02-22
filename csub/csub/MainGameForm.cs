@@ -88,13 +88,10 @@ namespace csub
             {
                 foreach (var Boat in boats)
                 {
-                    Render(g);
+                    Boat.Render(g);
                 }
 
             }
-
-
-
 
             if (torpedo != null)
             {
