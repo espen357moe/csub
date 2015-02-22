@@ -108,36 +108,14 @@ namespace csub
             if (boats != null)
             {
                 foreach (var Boat in boats)
-                {
-
-
-                   
-                    Boat.Render(g);
+                {                   
+                    Render(Boat, g);
                 }
-
             }
 
             if (torpedo != null)
-            {
-
-                
-                
-                var transform = g.Transform;
-                var mat = new Matrix(1, 0, 0, 1, 0, 0); // Identitetsmatrise
-
-                int h2 = this.Height / 3;
-                var scale = torpedo.Position.Y / h2;
-
-                //Vi flytter koordinatsystemet til midten av skjermen istedet for øverst i høyre hjørne.
-                mat.Translate((float) this.ClientSize.Width / 2, ((float)this.ClientSize.Height / 10)*4);
-                // Vi skalerer etter avstand fra horisonten
-                mat.Scale(scale, scale);
-                // Vi flytter igjen koordinatsystemet til der torpedoen befinner seg.
-                mat.Translate(torpedo.Position.X, torpedo.Position.Y);
-
-                g.Transform = mat;
-                torpedo.Render(g);
-                g.Transform = transform;
+            {                
+                Render(torpedo, g);            
             }
 
             
