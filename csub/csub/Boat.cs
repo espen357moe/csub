@@ -28,7 +28,12 @@ namespace csub
             }
         }
 
-        
+
+        public void FrameTick(float dt)
+        {
+            Position = new PointF((Position.X + 30 * dt), Distance);
+            System.Console.WriteLine("Skiff Position: " + Position.ToString());
+        }
 
         public PointF Position { get; set; }
         public void Render(Graphics g)
@@ -36,6 +41,8 @@ namespace csub
 
             g.DrawImage(Image, new Point(-Image.Width / 2, -Image.Height));
         }
+
+
     }
 
 }

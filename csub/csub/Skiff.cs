@@ -26,11 +26,7 @@ namespace csub
             g.DrawImage(pirateImage, 200, Distance);
         }
 
-        public void FrameTick(float dt)
-        {
-            Position = new PointF((Position.X + 30 * dt), Distance);
-            System.Console.WriteLine("Skiff Position: "+ Position.ToString());
-        }
+       
    
         }
 }

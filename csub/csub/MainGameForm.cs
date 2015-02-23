@@ -151,7 +151,13 @@ namespace csub
                 System.Console.WriteLine((theSkiff.Position).ToString());
             }
 
-            Invalidate();
+            foreach (var Boat in boats)
+            {
+               //frametick båtene, slett om den beveger seg utenfor bildet
+                
+            }
+
+            Refresh();
 
 
 
