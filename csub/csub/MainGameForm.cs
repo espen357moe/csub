@@ -144,17 +144,16 @@ namespace csub
             {
                 var theSkiff = new Skiff();
                 theSkiff.Speed = (rnd.Next(1,5));
-                theSkiff.Position = new PointF(-(ClientSize.Width*ClientSize.Height), rnd.Next(50, 200));
+                theSkiff.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
                 boats.Add(theSkiff);
                 System.Console.WriteLine("Skiff added. Speed: " +theSkiff.Speed + ", distance: " + theSkiff.Position.Y);
                 soundPlayer.playNewSkiff(); 
-                theSkiff.FrameTick((float)0.1);
-                System.Console.WriteLine((theSkiff.Position).ToString());
+                theSkiff.FrameTick((float)0.1);              
             }
 
             foreach (var boat in boats)
             {
-               //frametick båtene, slett om den beveger seg utenfor bildet
+               boat.FrameTick((float)0.1);
                 
             }
 
