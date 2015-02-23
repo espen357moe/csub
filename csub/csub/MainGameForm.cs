@@ -80,7 +80,7 @@ namespace csub
             mat.Translate((float)ClientSize.Width / 2, ((float)ClientSize.Height / 10) * 4);
             // Vi skalerer etter avstand fra horisonten
             mat.Scale(scale, scale);
-            // Vi flytter igjen koordinatsystemet til der båten befinner seg.
+            // Vi flytter igjen koordinatsystemet til der gjenstanden befinner seg.
             mat.Translate(i.Position.X, i.Position.Y);
 
             g.Transform = mat;
@@ -130,6 +130,7 @@ namespace csub
             if (torpedo != null)
             {
                 torpedo.FrameTick((float)0.1);
+                System.Console.WriteLine((torpedo.Position.Y).ToString());
                 if (torpedo.Position.Y <= 0)
                     torpedo = null;
             }
@@ -145,6 +146,7 @@ namespace csub
                 boats.Add(theSkiff);
                 System.Console.WriteLine("Skiff added. Speed: " +theSkiff.Speed + ", distance: " + theSkiff.Distance);
                 soundPlayer.playNewSkiff(); 
+                theSkiff.FrameTick((float)0.1);
             }
 
             Invalidate();
