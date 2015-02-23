@@ -108,9 +108,9 @@ namespace csub
 
             if (boats != null)
             {
-                foreach (var Boat in boats)
+                foreach (var boat in boats)
                 {                   
-                    Render(Boat, g);
+                    Render(boat, g);
                    
                 }
             }
@@ -152,7 +152,7 @@ namespace csub
                 System.Console.WriteLine((theSkiff.Position).ToString());
             }
 
-            foreach (var Boat in boats)
+            foreach (var boat in boats)
             {
                //frametick båtene, slett om den beveger seg utenfor bildet
                 
