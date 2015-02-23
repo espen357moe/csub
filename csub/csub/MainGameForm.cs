@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 
 namespace csub
@@ -168,6 +169,16 @@ namespace csub
         {
         //    //Score
             scoreLbl.Text = Convert.ToString(score);
+
+            XDocument xdoc = XDocument.Load("test.xml");
+
+            xdoc.Root.Add(
+                new XElement("Snippet",
+                    new XAttribute("name", scoreLbl.Text),
+                    new XElement("SnippetCode", scoreLbl.Text))
+                );
+            xdoc.Save("test.xml");
+
         }
 
 
