@@ -110,6 +110,7 @@ namespace csub
                 foreach (var Boat in boats)
                 {                   
                     Render(Boat, g);
+                   
                 }
             }
 
@@ -142,11 +143,12 @@ namespace csub
             {
                 var theSkiff = new Skiff();
                 theSkiff.Speed = (rnd.Next(1,5));
-                theSkiff.Distance = (rnd.Next(1,10));
+                theSkiff.Distance = (rnd.Next(1,200));
                 boats.Add(theSkiff);
                 System.Console.WriteLine("Skiff added. Speed: " +theSkiff.Speed + ", distance: " + theSkiff.Distance);
                 soundPlayer.playNewSkiff(); 
                 theSkiff.FrameTick((float)0.1);
+                System.Console.WriteLine((theSkiff.Position).ToString());
             }
 
             Invalidate();

@@ -11,7 +11,7 @@ using System.Xml.Schema;
 namespace csub
 {
     class HighScoreHandler
-    {
+    {/*
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -67,7 +67,7 @@ namespace csub
 
         }
 
-
+    */
 
 
 
@@ -110,6 +110,6 @@ namespace csub
         }
 
 
-
+    
     }
 }

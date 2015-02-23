@@ -21,14 +21,15 @@ namespace csub
             get { return pirateImage; }
         }
         
-        public void Render(Graphics g)
+        public new void Render(Graphics g)
         {            
-            g.DrawImage(pirateImage,100,100);
+            g.DrawImage(pirateImage, 200, Distance);
         }
 
         public void FrameTick(float dt)
         {
-            Position = new PointF((Position.X - 30 * dt), Position.Y);
+            Position = new PointF((Position.X + 30 * dt), Distance);
+            System.Console.WriteLine("Skiff Position: "+ Position.ToString());
         }
    
         }
