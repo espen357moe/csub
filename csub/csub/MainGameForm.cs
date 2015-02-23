@@ -111,14 +111,19 @@ namespace csub
             {
                 Render(torpedo, g);
                 
-            //sjekker om torpedo treffer båt. Fjerner båt om så.
+                //sjekker om torpedo treffer båt. Fjerner båt om så.
                 foreach (var boat in boats)
                 {
-                    if (torpedo.Position.Y == boat.Position.Y)
-                    {
-                        System.Console.WriteLine("Torpedo reached boat Y position");
 
-                    }
+                        Rectangle r1 = new Rectangle();
+                        Rectangle r2 = new Rectangle();
+                        
+                        if (Rectangle.Intersect(r1, r2) != Rectangle.Empty)
+                        {
+                            // Intersect or contact
+                        }
+
+                    
                 }
                 
             }
