@@ -23,8 +23,7 @@ namespace csub
         public PointF Position { get; set; }
         public void Render(Graphics g)
         {
-
-            g.DrawImage(Image, new Point(-Image.Width / 2, -Image.Height));
+            g.DrawImage(Image, new Point(-Image.Width * 3, -Image.Height));
         }
 
 

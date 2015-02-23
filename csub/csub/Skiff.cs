@@ -23,7 +23,7 @@ namespace csub
         
         public new void Render(Graphics g)
         {            
-            g.DrawImage(pirateImage, -200, Position.Y);
+            g.DrawImage(pirateImage, 0, Position.Y);
         }
 
        

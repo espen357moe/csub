@@ -179,10 +179,10 @@ namespace csub
                 }
             }
 
+            //FrameTick'er båtene
             foreach (var boat in boats)
             {
-               boat.FrameTick((float)0.1);
-                
+               boat.FrameTick((float)0.1);               
             }
 
             Refresh();
