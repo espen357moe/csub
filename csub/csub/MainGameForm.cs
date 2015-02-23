@@ -105,6 +105,11 @@ namespace csub
 
             g.FillRectangle(skyBrush, 0, 0, windowWidth, windowHeight);
             g.FillRectangle(seaBrush, 0, ((windowHeight / 10) * 4), windowWidth, (windowHeight / 10) * 6);
+            
+            if (torpedo != null)
+            {
+                Render(torpedo, g);
+            }
 
             if (boats != null)
             {
@@ -115,10 +120,7 @@ namespace csub
                 }
             }
 
-            if (torpedo != null)
-            {                
-                Render(torpedo, g);            
-            }
+            
 
             
             
