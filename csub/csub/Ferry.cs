@@ -24,6 +24,7 @@ namespace csub
         public new void Render(Graphics g)
         {
             g.DrawImage(ferryImage, 0, Position.Y);
+          
         }
 
 

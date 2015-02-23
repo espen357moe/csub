@@ -110,6 +110,17 @@ namespace csub
             if (torpedo != null)
             {
                 Render(torpedo, g);
+                
+            //sjekker om torpedo treffer båt. Fjerner båt om så.
+                foreach (var boat in boats)
+                {
+                    if (torpedo.Position.Y == boat.Position.Y)
+                    {
+                        System.Console.WriteLine("Torpedo reached boat Y position");
+
+                    }
+                }
+                
             }
 
             //tegner båter dersom det finnes noen i boats-lista, fjerner når de er utenfor vinduskanten
