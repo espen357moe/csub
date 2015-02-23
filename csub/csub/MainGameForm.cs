@@ -213,15 +213,15 @@ namespace csub
         //    //Score
             scoreLbl.Text = Convert.ToString(score);
 
-            XDocument xdoc = XDocument.Load("test.xml");
+            XDocument xdoc = XDocument.Load("../../scores/scores.xml");
 
             xdoc.Root.Add(
-                new XElement("Snippet",
-                    new XAttribute("name", scoreLbl.Text),
-                    new XElement("SnippetCode", scoreLbl.Text))
+                new XElement("Scores",
+                 // scoreLbl1 må byttes ut med insertNameBox   new XAttribute("name", scoreLbl.Text),
+                    new XElement("score", scoreLbl.Text))
                 );
-            xdoc.Save("test.xml");
-
+            xdoc.Save("../../scores/scores.xml");
+ 
         }
 
 
