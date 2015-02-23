@@ -166,6 +166,19 @@ namespace csub
                 }
             }
 
+            if (prb == 3)
+            {
+                {
+                    var theTitanic = new Titanic();
+                    theTitanic.Speed = (rnd.Next(1, 5));
+                    theTitanic.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
+                    boats.Add(theTitanic);
+                    System.Console.WriteLine("Titanic added. Speed: " + theTitanic.Speed + ", distance: " + theTitanic.Position.Y);
+                    soundPlayer.playNewSkiff();
+                    theTitanic.FrameTick((float)0.1);
+                }
+            }
+
             foreach (var boat in boats)
             {
                boat.FrameTick((float)0.1);
