@@ -132,7 +132,6 @@ namespace csub
             if (torpedo != null)
             {
                 torpedo.FrameTick((float)0.1);
-                System.Console.WriteLine((torpedo.Position.Y).ToString());
                 if (torpedo.Position.Y <= 0)
                     torpedo = null;
             }

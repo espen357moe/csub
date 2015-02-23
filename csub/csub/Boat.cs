@@ -17,7 +17,7 @@ namespace csub
 
         public void FrameTick(float dt)
         {
-            Position = new PointF((Position.X + 30 * dt), Position.Y);          
+            Position = new PointF((Position.X + 50 * dt), Position.Y);          
         }
 
         public PointF Position { get; set; }
