@@ -106,26 +106,27 @@ namespace csub
             g.FillRectangle(skyBrush, 0, 0, windowWidth, windowHeight);
             g.FillRectangle(seaBrush, 0, ((windowHeight / 10) * 4), windowWidth, (windowHeight / 10) * 6);
             
+            //tegner torpedo dersom den eksisterer
             if (torpedo != null)
             {
                 Render(torpedo, g);
             }
 
+            //tegner båter dersom det finnes noen i boats-lista, fjerner når de er utenfor vinduskanten
             if (boats != null)
             {
                 foreach (var boat in boats)
                 {                   
                     Render(boat, g);
+                    if (boat.Position.Y > ClientSize.Width)
+                    {
+                        boats.Remove(boat);
+                    }
                    
                 }
             }
-
-            
-
-            
-            
-            
-
+                                         
+            //tegner periskopet til slutt
             g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                 
         }    
 
@@ -138,7 +139,7 @@ namespace csub
                     torpedo = null;
             }
 
-            //vi genererer en tilfeldig båt etter en viss sannsynlighet pr. bilderute
+            //genererer en båt med tilfeldig avstand etter en viss sannsynlighet pr. bilderute
             Random rnd = new Random();       
             int prb = rnd.Next(250);
             if (prb == 1)
@@ -150,6 +151,19 @@ namespace csub
                 System.Console.WriteLine("Skiff added. Speed: " +theSkiff.Speed + ", distance: " + theSkiff.Position.Y);
                 soundPlayer.playNewSkiff(); 
                 theSkiff.FrameTick((float)0.1);              
+            }
+            
+            if (prb == 2)
+            {
+                {
+                    var theFerry = new Ferry();
+                    theFerry.Speed = (rnd.Next(1, 5));
+                    theFerry.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
+                    boats.Add(theFerry);
+                    System.Console.WriteLine("Ferry added. Speed: " + theFerry.Speed + ", distance: " + theFerry.Position.Y);
+                    soundPlayer.playNewSkiff();
+                    theFerry.FrameTick((float)0.1);
+                }
             }
 
             foreach (var boat in boats)
