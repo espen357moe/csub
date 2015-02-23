@@ -161,7 +161,7 @@ namespace csub
                     theFerry.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
                     boats.Add(theFerry);
                     System.Console.WriteLine("Ferry added. Speed: " + theFerry.Speed + ", distance: " + theFerry.Position.Y);
-                    soundPlayer.playNewSkiff();
+                    soundPlayer.playNewFerry();
                     theFerry.FrameTick((float)0.1);
                 }
             }
@@ -174,7 +174,7 @@ namespace csub
                     theTitanic.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
                     boats.Add(theTitanic);
                     System.Console.WriteLine("Titanic added. Speed: " + theTitanic.Speed + ", distance: " + theTitanic.Position.Y);
-                    soundPlayer.playNewSkiff();
+                    soundPlayer.playNewTitanic();
                     theTitanic.FrameTick((float)0.1);
                 }
             }

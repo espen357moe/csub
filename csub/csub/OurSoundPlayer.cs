@@ -39,5 +39,19 @@ namespace csub
             newSkiff.Dispose();
         }
 
+        public void playNewFerry()
+        {
+            System.Media.SoundPlayer newFerry = new System.Media.SoundPlayer("../../sounds/ferry.wav");
+            newFerry.Play();
+            newFerry.Dispose();
+        }
+
+        public void playNewTitanic()
+        {
+            System.Media.SoundPlayer newTitanic = new System.Media.SoundPlayer("../../sounds/titanic.wav");
+            newTitanic.Play();
+            newTitanic.Dispose();
+        }
+
     }
 }
