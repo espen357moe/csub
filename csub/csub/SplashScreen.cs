@@ -32,7 +32,7 @@ namespace csub
             richTextBox1.Text = "";
             try
             {
-                XmlTextReader leser = new XmlTextReader("scores.xml");
+                XmlTextReader leser = new XmlTextReader("../../scores/scores.xml");
                 while (leser.Read())  // leser neste
                 {
                     switch (leser.NodeType)
