@@ -12,26 +12,12 @@ namespace csub
     public abstract class Boat : IRenderable
     {
         public abstract float Speed { get; set; }
-        public abstract MainGameForm.Direction Direction { get; }
-        //public abstract float Distance { get; set; }
-        public abstract Image Image { get; }
-
-        int Distance
-        {
-            get
-            {
-                return (int)(Position.Y / 5); //ratioen (5) er vilkårlig valgt
-            }
-            set
-            {
-                Position = new PointF(Position.X, value * 5); //ratioen (5) er vilkårlig valgt
-            }
-        }
-
+        public abstract MainGameForm.Direction Direction { get; }      
+        public abstract Image Image { get; }       
 
         public void FrameTick(float dt)
         {
-            Position = new PointF((Position.X + 30 * dt), Distance);
+            Position = new PointF((Position.X + 30 * dt), Position.Y);
             System.Console.WriteLine("Skiff Position: " + Position.ToString());
         }
 

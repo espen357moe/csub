@@ -12,7 +12,7 @@ namespace csub
     {
         public override float Speed { get; set; }     
         public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; }}
-        public float Distance { get; set; } //Dette er i praksis Y-koordinatet for skiff-en
+
        
         private readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
 
@@ -23,7 +23,7 @@ namespace csub
         
         public new void Render(Graphics g)
         {            
-            g.DrawImage(pirateImage, 200, Distance);
+            g.DrawImage(pirateImage, 200, Position.Y);
         }
 
        

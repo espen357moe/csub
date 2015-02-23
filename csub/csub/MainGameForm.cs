@@ -139,14 +139,14 @@ namespace csub
 
             //vi genererer en tilfeldig båt etter en viss sannsynlighet pr. bilderute
             Random rnd = new Random();       
-            int prb = rnd.Next(500);
+            int prb = rnd.Next(250);
             if (prb == 1)
             {
                 var theSkiff = new Skiff();
                 theSkiff.Speed = (rnd.Next(1,5));
-                theSkiff.Distance = (rnd.Next(1,200));
+                theSkiff.Position = new PointF(-(ClientSize.Width*ClientSize.Height), rnd.Next(50, 200));
                 boats.Add(theSkiff);
-                System.Console.WriteLine("Skiff added. Speed: " +theSkiff.Speed + ", distance: " + theSkiff.Distance);
+                System.Console.WriteLine("Skiff added. Speed: " +theSkiff.Speed + ", distance: " + theSkiff.Position.Y);
                 soundPlayer.playNewSkiff(); 
                 theSkiff.FrameTick((float)0.1);
                 System.Console.WriteLine((theSkiff.Position).ToString());
