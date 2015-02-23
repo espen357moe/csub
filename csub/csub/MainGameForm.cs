@@ -144,8 +144,7 @@ namespace csub
                 theSkiff.Distance = (rnd.Next(1,10));
                 boats.Add(theSkiff);
                 System.Console.WriteLine("Skiff added. Speed: " +theSkiff.Speed + ", distance: " + theSkiff.Distance);
-                SoundPlayer player = new SoundPlayer("../../sounds/cartmanrespect.wav");
-                player.Play(); 
+                soundPlayer.playNewSkiff(); 
             }
 
             Invalidate();
