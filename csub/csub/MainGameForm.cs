@@ -130,6 +130,8 @@ namespace csub
             //tegner båter dersom det finnes noen i boats-lista, fjerner når de er utenfor vinduskanten
             if (boats != null)
             {
+
+                var forDeletion = new List<Boat>();
                 foreach (var boat in boats)
                 {                   
                       Render(boat, g);                    
@@ -150,11 +152,18 @@ namespace csub
                         
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
                         {
-                            formGraphics.FillEllipse(explosionBrush, boatHitBox);
-                            System.Console.WriteLine("Torpedo hitbox intersected with boat");
+
+                            boat.Explode(g);
+                            forDeletion.Add(boat);
+
                         }
                     }
                 }
+                foreach (var boat in forDeletion)
+                {
+                    boats.Remove(boat);
+                }
+
             }
                                          
             //tegner periskopet til slutt

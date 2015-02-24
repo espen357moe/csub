@@ -25,12 +25,17 @@ namespace csub
         public PointF Position { get; set; }
         public void Render(Graphics g)
         {
-            g.DrawImage(Image, new Point(-Image.Width / 2, -Image.Height));
+            g.DrawImage(Image, new Point(-Image.Width / 2, Image.Height));
         }
 
-       
 
-
+        public void Explode(Graphics g)
+        {
+            RectangleF boatRectangle = new RectangleF(Position.X, Position.Y, 200, 200);
+            SolidBrush explosionBrush = new System.Drawing.SolidBrush(System.Drawing.Color.OrangeRed);
+            g.FillEllipse(explosionBrush, boatRectangle);
+            
+        }
     }
 
 }
