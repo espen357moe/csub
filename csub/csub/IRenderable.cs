@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace csub
 {
+    //interface for tegnbare objekter
     public interface IRenderable
     {
         PointF Position { get; set; }

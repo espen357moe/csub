@@ -48,7 +48,7 @@ namespace csub
             Render(g);           
         }
 
-        //Instansierer ny torpedo om bruker trykker space
+        //Instansierer ny torpedo om bruker trykker space, dersom det ikke allerede er en torpedo i spill
         private void DisplayOnKeyPress(object sender, KeyPressEventArgs keyPressEventArgs)
         {
             
@@ -63,12 +63,10 @@ namespace csub
                 {
                     soundPlayer.playReloading();
                 }
- 
            }
- 
         }
 
-
+        //metode som tegner objekter på skjermen og sørger for simulert perspektivskalering
         private void Render(IRenderable i, Graphics g)
         {
             var transform = g.Transform;
@@ -109,22 +107,7 @@ namespace csub
             //tegner torpedo dersom den eksisterer
             if (torpedo != null)
             {
-                Render(torpedo, g);
-                
-                //sjekker om torpedo treffer båt. Fjerner båt om så.
-                foreach (var boat in boats)
-                {
-
-                       
-                        
-                        //if (Rectangle.Intersect(r1, r2) != Rectangle.Empty)
-                        //{
-                            // Intersect or contact
-                        //}
-
-                    
-                }
-                
+                Render(torpedo, g);                                              
             }
 
             //tegner båter dersom det finnes noen i boats-lista
@@ -142,38 +125,37 @@ namespace csub
                         RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, 10);
                         RectangleF torpedoHitBox = new RectangleF(torpedo.Position.X, torpedo.Position.Y, 10, 10);
 
-                        /* fjern kommentartegn for å se hitboxene bli tegnet på skjermen
+                        /* fjern kommentartegn fra følgende bolk for å se hitboxene bli tegnet på skjermen
                         System.Drawing.SolidBrush explosionBrush = new System.Drawing.SolidBrush(System.Drawing.Color.OrangeRed);
                         System.Drawing.SolidBrush torpedoHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Yellow);
-                        System.Drawing.SolidBrush boatHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
-                         
-
+                        System.Drawing.SolidBrush boatHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);                         
                         System.Drawing.Graphics formGraphics = this.CreateGraphics();
                         formGraphics.FillRectangle(boatHitBoxBrush, boatHitBox);
                         formGraphics.FillRectangle(torpedoHitBoxBrush, torpedoHitBox);*/
                         
+                        //detekterer treff ved å se om hitboxene overlapper, klargjør truffet båt for fjerning
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
                         {
-
                             boat.Explode(g);
                             soundPlayer.playExplosionSound();
                             forDeletion.Add(boat);
-
                         }
                     }
                 }
+
+                //fjerner truffet båt og torpedo
                 foreach (var boat in forDeletion)
                 {
                     boats.Remove(boat);
                     torpedo = null;
                 }
-
             }
                                          
             //tegner periskopet til slutt
             g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                 
         }    
 
+        //timer
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (torpedo != null)
@@ -230,12 +212,8 @@ namespace csub
             }
 
             Refresh();
-
-
-
         } 
     
-
         public void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
         //    //Score
@@ -251,7 +229,5 @@ namespace csub
             xdoc.Save("../../scores/scores.xml");
  
         }
-
-
     }            
 }

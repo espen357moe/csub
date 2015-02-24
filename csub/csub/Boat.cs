@@ -15,8 +15,6 @@ namespace csub
         public abstract MainGameForm.Direction Direction { get; }      
         public abstract Image Image { get; } 
       
-        
-
         public void FrameTick(float dt)
         {
             Position = new PointF((Position.X + 50 * dt), Position.Y);          
@@ -28,14 +26,11 @@ namespace csub
             g.DrawImage(Image, new Point(-Image.Width / 2, Image.Height));
         }
 
-
         public void Explode(Graphics g)
         {
             RectangleF boatRectangle = new RectangleF(Position.X, Position.Y, 200, 200);
             SolidBrush explosionBrush = new System.Drawing.SolidBrush(System.Drawing.Color.OrangeRed);
-            g.FillEllipse(explosionBrush, boatRectangle);
-            
+            g.FillEllipse(explosionBrush, boatRectangle);          
         }
     }
-
 }
