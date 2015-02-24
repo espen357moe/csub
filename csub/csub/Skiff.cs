@@ -16,9 +16,6 @@ namespace csub
         private readonly Image pirateImage = Image.FromFile("../../images/southpark.png");
         public override int Value { get { return 3; } }       
 
-
-
-
         public override Image Image
         {
             get { return pirateImage; }

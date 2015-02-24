@@ -9,10 +9,10 @@ namespace csub
         {
             InitializeComponent();
 
+            //skriver ny highscore til form
             foreach (var entry in highscore.Entries)
             {
-                var item = new ListViewItem(entry.Name);
-                //item.SubItems.Add(entry.Name);
+                var item = new ListViewItem(entry.Name);                
                 item.SubItems.Add(entry.HighScore.ToString(CultureInfo.CurrentUICulture));
                 this.highscore.Items.Add(item);
             }
@@ -21,6 +21,11 @@ namespace csub
         private void avslutt_Click(object sender, System.EventArgs e)
         {
             Close();
+        }
+
+        private void highscore_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

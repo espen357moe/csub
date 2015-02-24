@@ -34,9 +34,6 @@ namespace csub
         public MainGameForm()
         {
             InitializeComponent();
-
-
-
             ticksIgjen = 30000/timer1.Interval;
             boats = new List<Boat>();
         }
@@ -145,10 +142,7 @@ namespace csub
                             soundPlayer.playExplosionSound();
                             forDeletion.Add(boat);
                         }
-                    }
-
-                   
-
+                    }              
                 }
 
                 //fjerner truffet båt og torpedo
@@ -179,6 +173,7 @@ namespace csub
                 Close();
                 return;
             }
+
             if (torpedo != null)
             {
                 torpedo.FrameTick((float)0.1);
@@ -201,29 +196,25 @@ namespace csub
             }
             
             if (prb == 2)
-            {
-                {
-                    var theFerry = new Ferry();
-                    theFerry.Speed = (rnd.Next(1, 5));
-                    theFerry.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
-                    boats.Add(theFerry);
-                    System.Console.WriteLine("Ferry added. Speed: " + theFerry.Speed + ", distance: " + theFerry.Position.Y);
-                    soundPlayer.playNewFerry();
-                    theFerry.FrameTick((float)0.1);
-                }
+            {                
+                var theFerry = new Ferry();
+                theFerry.Speed = (rnd.Next(1, 5));
+                theFerry.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
+                boats.Add(theFerry);
+                System.Console.WriteLine("Ferry added. Speed: " + theFerry.Speed + ", distance: " + theFerry.Position.Y);
+                soundPlayer.playNewFerry();
+                theFerry.FrameTick((float)0.1);                
             }
 
             if (prb == 3)
-            {
-                {
-                    var theTitanic = new Titanic();
-                    theTitanic.Speed = (rnd.Next(1, 5));
-                    theTitanic.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
-                    boats.Add(theTitanic);
-                    System.Console.WriteLine("Titanic added. Speed: " + theTitanic.Speed + ", distance: " + theTitanic.Position.Y);
-                    soundPlayer.playNewTitanic();
-                    theTitanic.FrameTick((float)0.1);
-                }
+            {                
+                var theTitanic = new Titanic();
+                theTitanic.Speed = (rnd.Next(1, 5));
+                theTitanic.Position = new PointF(-(ClientSize.Width), rnd.Next(50, 200));
+                boats.Add(theTitanic);
+                System.Console.WriteLine("Titanic added. Speed: " + theTitanic.Speed + ", distance: " + theTitanic.Position.Y);
+                soundPlayer.playNewTitanic();
+                theTitanic.FrameTick((float)0.1);              
             }
 
             //FrameTick'er båtene
@@ -232,23 +223,8 @@ namespace csub
                boat.FrameTick((float)0.1);               
             }
 
+            //oppdaterer skjermbildet
             Refresh();
-        } 
-    
-//        public void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-//        {
-//        //    //Score
-//            scoreLbl.Text = Convert.ToString(score);
-//
-//            XDocument xdoc = XDocument.Load("../../scores/scores.xml");
-//
-//            xdoc.Root.Add(
-//                new XElement("Scores",
-//                 // scoreLbl1 må byttes ut med insertNameBox   new XAttribute("name", scoreLbl.Text),
-//                    new XElement("score", scoreLbl.Text))
-//                );
-//            xdoc.Save("../../scores/scores.xml");
-// 
-//        }
+        }   
     }            
 }

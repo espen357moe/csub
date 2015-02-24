@@ -47,7 +47,6 @@
     <Compile Include="Boat.cs" />
     <Compile Include="Ferry.cs" />
     <Compile Include="Highscore.cs" />
-    <Compile Include="HighScoreHandler.cs" />
     <Compile Include="HighscoreList.cs">
       <SubType>Form</SubType>
     </Compile>

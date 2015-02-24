@@ -12,18 +12,20 @@ namespace csub
 {
     public partial class SetHighscore : Form
     {
-        private readonly long _points;
-        public SetHighscore(long points)
+        private readonly int _points;
+        public SetHighscore(int points)
         {
             _points = points;
             InitializeComponent();
             label1.Text = string.Format(label1.Text, points);
         }
 
+        //henter inn inntastet spillernavn
         public string PlayerName { get { return textBox1.Text; } }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //skriver highscore til XML-fil og sorterer 
             var score = Highscore.FromFile("highscore.xml");
 
             score.Entries =
@@ -35,6 +37,11 @@ namespace csub
             score.Save("highscore.xml");
 
             Close();
+        }
+
+        private void SetHighscore_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
