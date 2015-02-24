@@ -162,6 +162,7 @@ namespace csub
                 foreach (var boat in forDeletion)
                 {
                     boats.Remove(boat);
+                    torpedo = null;
                 }
 
             }
