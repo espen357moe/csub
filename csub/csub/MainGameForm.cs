@@ -115,13 +115,12 @@ namespace csub
                 foreach (var boat in boats)
                 {
 
-                        Rectangle r1 = new Rectangle();
-                        Rectangle r2 = new Rectangle();
+                       
                         
-                        if (Rectangle.Intersect(r1, r2) != Rectangle.Empty)
-                        {
+                        //if (Rectangle.Intersect(r1, r2) != Rectangle.Empty)
+                        //{
                             // Intersect or contact
-                        }
+                        //}
 
                     
                 }
