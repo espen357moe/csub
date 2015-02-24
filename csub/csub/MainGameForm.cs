@@ -127,7 +127,7 @@ namespace csub
                 
             }
 
-            //tegner båter dersom det finnes noen i boats-lista, fjerner når de er utenfor vinduskanten
+            //tegner båter dersom det finnes noen i boats-lista
             if (boats != null)
             {
 
@@ -138,22 +138,25 @@ namespace csub
 
                    if (torpedo != null)
                    {
-
-                        RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, boat.Image.Height);
+                        //lager "hitbox" dummy til båter og torpedo
+                        RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, 10);
                         RectangleF torpedoHitBox = new RectangleF(torpedo.Position.X, torpedo.Position.Y, 10, 10);
 
+                        /* fjern kommentartegn for å se hitboxene bli tegnet på skjermen
                         System.Drawing.SolidBrush explosionBrush = new System.Drawing.SolidBrush(System.Drawing.Color.OrangeRed);
                         System.Drawing.SolidBrush torpedoHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Yellow);
                         System.Drawing.SolidBrush boatHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
+                         
 
                         System.Drawing.Graphics formGraphics = this.CreateGraphics();
                         formGraphics.FillRectangle(boatHitBoxBrush, boatHitBox);
-                        formGraphics.FillRectangle(torpedoHitBoxBrush, torpedoHitBox);
+                        formGraphics.FillRectangle(torpedoHitBoxBrush, torpedoHitBox);*/
                         
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
                         {
 
                             boat.Explode(g);
+                            soundPlayer.playExplosionSound();
                             forDeletion.Add(boat);
 
                         }
