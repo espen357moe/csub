@@ -10,9 +10,12 @@ namespace csub
     //klasse for ferje, arver fra den abstrakte klassen Boat og interfacet IRenderable
     public class Ferry : Boat
     {
+        public new int Value = 2;
         public override float Speed { get; set; }
         public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; } }
         private readonly Image ferryImage = Image.FromFile("../../images/bast1.png");
+
+        
 
         public override Image Image
         {

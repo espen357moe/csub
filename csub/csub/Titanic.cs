@@ -10,9 +10,12 @@ namespace csub
     //klasse for ferje, arver fra den abstrakte klassen Boat og interfacet IRenderable
     public class Titanic : Boat
     {
+        public new int Value = 1;
         public override float Speed { get; set; }
         public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; } }
         private readonly Image titanicImage = Image.FromFile("../../images/titanic.png");
+
+        
 
         public override Image Image
         {

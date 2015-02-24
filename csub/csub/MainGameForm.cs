@@ -25,7 +25,9 @@ namespace csub
         private Torpedo torpedo;
         private OurSoundPlayer soundPlayer = new OurSoundPlayer();
         public enum Direction { Left, Right }
-        private List<Boat> boats; 
+        private List<Boat> boats;
+        public int poeng = 0;
+        
 
 
 
@@ -117,9 +119,10 @@ namespace csub
                 var forDeletion = new List<Boat>();
                 foreach (var boat in boats)
                 {                   
-                      Render(boat, g);                    
+                      Render(boat, g);
+                    
 
-                   if (torpedo != null)
+                    if (torpedo != null)
                    {
                         //lager "hitbox" dummy til båter og torpedo
                         RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, 10);
@@ -136,11 +139,16 @@ namespace csub
                         //detekterer treff ved å se om hitboxene overlapper, klargjør truffet båt for fjerning
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
                         {
+                            poeng = (int)(boat.Value);
+                            scoreLbl.Text = poeng.ToString();
                             boat.Explode(g);
                             soundPlayer.playExplosionSound();
                             forDeletion.Add(boat);
                         }
                     }
+
+                   
+
                 }
 
                 //fjerner truffet båt og torpedo
@@ -214,20 +222,20 @@ namespace csub
             Refresh();
         } 
     
-        public void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-        //    //Score
-            scoreLbl.Text = Convert.ToString(score);
-
-            XDocument xdoc = XDocument.Load("../../scores/scores.xml");
-
-            xdoc.Root.Add(
-                new XElement("Scores",
-                 // scoreLbl1 må byttes ut med insertNameBox   new XAttribute("name", scoreLbl.Text),
-                    new XElement("score", scoreLbl.Text))
-                );
-            xdoc.Save("../../scores/scores.xml");
- 
-        }
+//        public void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+//        {
+//        //    //Score
+//            scoreLbl.Text = Convert.ToString(score);
+//
+//            XDocument xdoc = XDocument.Load("../../scores/scores.xml");
+//
+//            xdoc.Root.Add(
+//                new XElement("Scores",
+//                 // scoreLbl1 må byttes ut med insertNameBox   new XAttribute("name", scoreLbl.Text),
+//                    new XElement("score", scoreLbl.Text))
+//                );
+//            xdoc.Save("../../scores/scores.xml");
+// 
+//        }
     }            
 }
