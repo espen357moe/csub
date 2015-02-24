@@ -46,7 +46,14 @@
   <ItemGroup>
     <Compile Include="Boat.cs" />
     <Compile Include="Ferry.cs" />
+    <Compile Include="Highscore.cs" />
     <Compile Include="HighScoreHandler.cs" />
+    <Compile Include="HighscoreList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HighscoreList.Designer.cs">
+      <DependentUpon>HighscoreList.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +63,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IRenderable.cs" />
+    <Compile Include="SetHighscore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetHighscore.Designer.cs">
+      <DependentUpon>SetHighscore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Skiff.cs" />
     <Compile Include="OurSoundPlayer.cs" />
     <Compile Include="SplashScreen.cs">
@@ -66,6 +79,9 @@
     </Compile>
     <Compile Include="Titanic.cs" />
     <Compile Include="Torpedo.cs" />
+    <EmbeddedResource Include="HighscoreList.resx">
+      <DependentUpon>HighscoreList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainGameForm.resx">
       <DependentUpon>MainGameForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +94,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SetHighscore.resx">
+      <DependentUpon>SetHighscore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
