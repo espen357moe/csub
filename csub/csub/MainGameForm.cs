@@ -132,17 +132,25 @@ namespace csub
             {
                 foreach (var boat in boats)
                 {                   
-                      Render(boat, g);
-                    
+                      Render(boat, g);                    
 
                    if (torpedo != null)
                    {
 
-                      RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, boat.Image.Height);
-                      RectangleF torpedoHitBox = new RectangleF(torpedo.Position.X, torpedo.Position.Y, 10, 10);
+                        RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, boat.Image.Height);
+                        RectangleF torpedoHitBox = new RectangleF(torpedo.Position.X, torpedo.Position.Y, 10, 10);
+
+                        System.Drawing.SolidBrush explosionBrush = new System.Drawing.SolidBrush(System.Drawing.Color.OrangeRed);
+                        System.Drawing.SolidBrush torpedoHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Yellow);
+                        System.Drawing.SolidBrush boatHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
+
+                        System.Drawing.Graphics formGraphics = this.CreateGraphics();
+                        formGraphics.FillEllipse(explosionBrush, boatHitBox);
+                        formGraphics.FillEllipse(torpedoHitBoxBrush, torpedoHitBox);
+                        
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
                         {
-                            boats.Remove(boat);
+                            
                             System.Console.WriteLine("Torpedo hitbox intersected with boat");
                         }
                     }
