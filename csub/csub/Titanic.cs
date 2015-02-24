@@ -12,8 +12,6 @@ namespace csub
     {
         public override float Speed { get; set; }
         public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; } }
-
-
         private readonly Image titanicImage = Image.FromFile("../../images/titanic.png");
 
         public override Image Image
@@ -25,8 +23,5 @@ namespace csub
         {
             g.DrawImage(titanicImage, 0, Position.Y);
         }
-
-
-
     }
 }

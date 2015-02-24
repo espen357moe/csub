@@ -12,8 +12,6 @@ namespace csub
     {
         public override float Speed { get; set; }
         public override MainGameForm.Direction Direction { get { return MainGameForm.Direction.Left; } }
-
-
         private readonly Image ferryImage = Image.FromFile("../../images/bast1.png");
 
         public override Image Image
@@ -26,8 +24,5 @@ namespace csub
             g.DrawImage(ferryImage, 0, Position.Y);
           
         }
-
-
-
     }
 }

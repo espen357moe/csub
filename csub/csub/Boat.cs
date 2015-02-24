@@ -28,7 +28,7 @@ namespace csub
 
         public void Explode(Graphics g)
         {
-            RectangleF boatRectangle = new RectangleF(Position.X, Position.Y, 200, 200);
+            RectangleF boatRectangle = new RectangleF(Position.X, Position.Y, 400, 400);
             SolidBrush explosionBrush = new System.Drawing.SolidBrush(System.Drawing.Color.OrangeRed);
             g.FillEllipse(explosionBrush, boatRectangle);          
         }
