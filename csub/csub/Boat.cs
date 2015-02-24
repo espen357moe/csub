@@ -22,11 +22,7 @@ namespace csub
         }
 
         public PointF Position { get; set; }
-<<<<<<< HEAD
 
-=======
-        public abstract int Value { get; }
->>>>>>> 47b8f0e8aa0374e9acf6b084540edb6fec6d4ab4
         public void Render(Graphics g)
         {
             g.DrawImage(Image, new Point(-Image.Width / 2, Image.Height));
