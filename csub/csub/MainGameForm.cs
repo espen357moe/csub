@@ -27,15 +27,17 @@ namespace csub
         public enum Direction { Left, Right }
         private List<Boat> boats;
         public int poeng = 0;
-        
-
-
+        private int ticksIgjen = 0;
 
         private Image periskop = Image.FromFile("../../images/periskop.png");
 
         public MainGameForm()
         {
             InitializeComponent();
+
+
+
+            ticksIgjen = 30000/timer1.Interval;
             boats = new List<Boat>();
         }
 
@@ -118,12 +120,10 @@ namespace csub
 
                 var forDeletion = new List<Boat>();
                 foreach (var boat in boats)
-                {                   
-                      Render(boat, g);
-                    
-
+                {
+                    Render(boat, g);
                     if (torpedo != null)
-                   {
+                    {
                         //lager "hitbox" dummy til båter og torpedo
                         RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, 10);
                         RectangleF torpedoHitBox = new RectangleF(torpedo.Position.X, torpedo.Position.Y, 10, 10);
@@ -131,11 +131,11 @@ namespace csub
                         /* fjern kommentartegn fra følgende bolk for å se hitboxene bli tegnet på skjermen
                         System.Drawing.SolidBrush explosionBrush = new System.Drawing.SolidBrush(System.Drawing.Color.OrangeRed);
                         System.Drawing.SolidBrush torpedoHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Yellow);
-                        System.Drawing.SolidBrush boatHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);                         
+                        System.Drawing.SolidBrush boatHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
                         System.Drawing.Graphics formGraphics = this.CreateGraphics();
                         formGraphics.FillRectangle(boatHitBoxBrush, boatHitBox);
                         formGraphics.FillRectangle(torpedoHitBoxBrush, torpedoHitBox);*/
-                        
+
                         //detekterer treff ved å se om hitboxene overlapper, klargjør truffet båt for fjerning
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
                         {
@@ -163,9 +163,22 @@ namespace csub
             g.DrawImage(periskop, 0, 0, (ClientSize.Width), ClientSize.Height);                 
         }    
 
+        
         //timer
         private void timer1_Tick(object sender, EventArgs e)
         {
+            ticksIgjen--;
+
+            if (ticksIgjen <= 0)
+            {
+                timer1.Stop();
+                var setScore = new SetHighscore(poeng);
+                setScore.ShowDialog();
+                var list = new HighscoreList(Highscore.FromFile("highscore.xml"));
+                list.ShowDialog();
+                Close();
+                return;
+            }
             if (torpedo != null)
             {
                 torpedo.FrameTick((float)0.1);
