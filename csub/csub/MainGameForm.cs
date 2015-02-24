@@ -139,7 +139,7 @@ namespace csub
                         //detekterer treff ved å se om hitboxene overlapper, klargjør truffet båt for fjerning
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
                         {
-                            poeng = (int)(boat.Value);
+                            poeng = poeng+(boat.Value);
                             scoreLbl.Text = poeng.ToString();
                             boat.Explode(g);
                             soundPlayer.playExplosionSound();
