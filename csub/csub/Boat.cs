@@ -13,7 +13,9 @@ namespace csub
     {
         public abstract float Speed { get; set; }
         public abstract MainGameForm.Direction Direction { get; }      
-        public abstract Image Image { get; }       
+        public abstract Image Image { get; } 
+      
+        
 
         public void FrameTick(float dt)
         {
@@ -25,6 +27,8 @@ namespace csub
         {
             g.DrawImage(Image, new Point(-Image.Width * 3, -Image.Height));
         }
+
+       
 
 
     }

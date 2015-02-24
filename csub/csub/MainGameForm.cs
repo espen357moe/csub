@@ -132,12 +132,20 @@ namespace csub
             {
                 foreach (var boat in boats)
                 {                   
-                    Render(boat, g);
-                    if (boat.Position.Y > ClientSize.Width)
-                    {
-                        boats.Remove(boat);
+                      Render(boat, g);
+                    
+
+                   if (torpedo != null)
+                   {
+
+                      RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, boat.Image.Height);
+                      RectangleF torpedoHitBox = new RectangleF(torpedo.Position.X, torpedo.Position.Y, 10, 10);
+                        if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
+                        {
+                            boats.Remove(boat);
+                            System.Console.WriteLine("Torpedo hitbox intersected with boat");
+                        }
                     }
-                   
                 }
             }
                                          
