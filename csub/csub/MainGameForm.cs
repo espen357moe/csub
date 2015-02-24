@@ -145,8 +145,8 @@ namespace csub
                         System.Drawing.SolidBrush boatHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
 
                         System.Drawing.Graphics formGraphics = this.CreateGraphics();
-                        formGraphics.FillEllipse(explosionBrush, boatHitBox);
-                        formGraphics.FillEllipse(torpedoHitBoxBrush, torpedoHitBox);
+                        formGraphics.FillRectangle(explosionBrush, boatHitBox);
+                        formGraphics.FillRectangle(torpedoHitBoxBrush, torpedoHitBox);
                         
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
                         {
