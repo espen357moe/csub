@@ -53,20 +53,17 @@ namespace csub
            }
         }
 
-        //metode som tegner objekter på skjermen og sørger for simulert perspektivskalering
+
         private void Render(IRenderable i, Graphics g)
         {
             var transform = g.Transform;
-            var mat = new Matrix(1, 0, 0, 1, 0, 0); // Identitetsmatrise
+            var mat = new Matrix(1, 0, 0, 1, 0, 0);
 
             int h2 = this.Height / 3;
             var scale = i.Position.Y / h2;
 
-            //Vi flytter koordinatsystemet til midten av skjermen istedet for øverst i høyre hjørne.
             mat.Translate((float)ClientSize.Width / 2, ((float)ClientSize.Height / 10) * 4);
-            // Vi skalerer etter avstand fra horisonten
             mat.Scale(scale, scale);
-            // Vi flytter igjen koordinatsystemet til der gjenstanden befinner seg.
             mat.Translate(i.Position.X, i.Position.Y);
 
             g.Transform = mat;
