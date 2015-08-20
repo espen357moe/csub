@@ -105,16 +105,16 @@ namespace csub
                     if (torpedo != null)
                     {
                         //lager "hitbox" dummy til båter og torpedo
-                        RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, 10);
-                        RectangleF torpedoHitBox = new RectangleF(torpedo.Position.X, torpedo.Position.Y, 10, 10);
+                        RectangleF boatHitBox = new RectangleF(boat.Position.X, boat.Position.Y, boat.Image.Width, 5);
+                        RectangleF torpedoHitBox = new RectangleF(torpedo.Position.X, torpedo.Position.Y, 20, 20);
 
-                        /* fjern kommentartegn fra følgende bolk for å se hitboxene bli tegnet på skjermen
+                       
                         System.Drawing.SolidBrush explosionBrush = new System.Drawing.SolidBrush(System.Drawing.Color.OrangeRed);
                         System.Drawing.SolidBrush torpedoHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Yellow);
                         System.Drawing.SolidBrush boatHitBoxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
                         System.Drawing.Graphics formGraphics = this.CreateGraphics();
                         formGraphics.FillRectangle(boatHitBoxBrush, boatHitBox);
-                        formGraphics.FillRectangle(torpedoHitBoxBrush, torpedoHitBox);*/
+                        formGraphics.FillRectangle(torpedoHitBoxBrush, torpedoHitBox);
 
                         //detekterer treff ved å se om hitboxene overlapper, klargjør truffet båt for fjerning
                         if (RectangleF.Intersect(boatHitBox, torpedoHitBox) != RectangleF.Empty)
