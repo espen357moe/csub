@@ -5,6 +5,7 @@ namespace csub
     //abstrakt superklasse implementerer interfacet Renderable
     public abstract class Boat : IRenderable
     {
+        // Heisann sveisann
         public abstract float Speed { get; set; }
         public abstract MainGameForm.Direction Direction { get; }      
         public abstract Image Image { get; }
